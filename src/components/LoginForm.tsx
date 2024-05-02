@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 
 export default function LoginForm() {
@@ -7,56 +5,53 @@ export default function LoginForm() {
   const [password, setPassword] = useState<string>('');
 
   return (
-    <div>
-      <h2 className="mb-4 text-xl font-semibold">Login to your account</h2>
-      <form className="grid gap-4">
-        <div className="rounded-md border border-danger-400 bg-danger-100 p-5 pt-3">
-          <h3 className="text-lg font-semibold text-parchment-700">
-            Incorrect email or password
-          </h3>
-          <p>
-            The email or password you entered does not match our records. Please
-            try again, and contact{' '}
-            <a
-              href="mailto:support@maela.com"
-              className="font-semibold text-accent"
-            >
-              support@maela.com
-            </a>{' '}
-            if you are unable to access your account.
-          </p>
-        </div>
-        <div className="grid gap-1">
-          <label className="block">Email</label>
-          <input
-            className="h-12 rounded-md border border-parchment-500 p-4 pt-3 text-parchment-800 placeholder:text-parchment-600"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            placeholder="Enter your email"
-          />
-          <div className="text-danger-400">Error message</div>
-        </div>
-        <div className="grid gap-1">
-          <label className="block">Password</label>
-          <input
-            className="h-12 rounded-md border border-parchment-500 p-4 pt-3 text-parchment-800 placeholder:text-parchment-600"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            placeholder="Enter your password"
-          />
-          <div className="text-danger-400">Error message</div>
-        </div>
-        <button
-          type="submit"
-          className="h-12 w-full rounded-md bg-parchment-800 p-3 pt-2 font-semibold text-white"
-        >
-          Login
-        </button>
-      </form>
-    </div>
+    <form className="grid gap-4">
+      <div className="rounded-md border border-danger-400 bg-danger-100 p-5 pt-3">
+        <h3 className="text-lg font-semibold text-parchment-700">
+          Incorrect email or password
+        </h3>
+        <p>
+          The email or password you entered does not match our records. Please
+          try again, and contact{' '}
+          <a
+            href="mailto:support@maela.com"
+            className="font-semibold text-accent"
+          >
+            support@maela.com
+          </a>{' '}
+          if you are unable to access your account.
+        </p>
+      </div>
+      <div className="grid gap-1">
+        <label className="block">Email</label>
+        <input
+          className="h-12 rounded-md border border-parchment-500 p-4 pt-3 text-parchment-800 placeholder:text-parchment-600"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          placeholder="Enter your email"
+        />
+        <div className="text-danger-400">Error message</div>
+      </div>
+      <div className="grid gap-1">
+        <label className="block">Password</label>
+        <input
+          className="h-12 rounded-md border border-parchment-500 p-4 pt-3 text-parchment-800 placeholder:text-parchment-600"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          placeholder="Enter your password"
+        />
+        <div className="text-danger-400">Error message</div>
+      </div>
+      <button
+        type="submit"
+        className="h-12 w-full rounded-md bg-parchment-800 p-3 pt-2 font-semibold text-white"
+      >
+        Login
+      </button>
+    </form>
   );
 }
