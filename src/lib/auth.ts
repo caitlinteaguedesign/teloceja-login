@@ -1,6 +1,8 @@
 import NextAuth from 'next-auth';
-import Google from 'next-auth/providers/google';
+import { ZodError } from 'zod';
 import Credentials from 'next-auth/providers/credentials';
+import { signInSchema } from './zod';
+import Google from 'next-auth/providers/google';
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -11,16 +13,18 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: {},
       },
       authorize: async (credentials) => {
-        let user = null;
-
-        // normally hash a password
-        // noramlly check a database to see if user exists
-        // normally check if password matches
-
-        // manual test
         try {
-          if (credentials.email == 'design@caitlinteague.com') {
-            if (credentials.password == 'admin') {
+          let user = null;
+          const { email, password } =
+            await signInSchema.parseAsync(credentials);
+
+          // normally hash a password
+          // noramlly check a database to see if user exists
+
+          // a manual test
+
+          if (email == 'design@caitlinteague.com') {
+            if (password == 'admin') {
               user = {
                 name: 'Caitlin Teague Doerr',
                 email: 'design@caitlintague.com',
@@ -28,8 +32,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             } else {
               throw new Error('Password does not match.');
             }
-          } else if (credentials.email == 'milz@yahoo.com') {
-            if (credentials.password == 'bubbers') {
+          } else if (email == 'milz@yahoo.com') {
+            if (password == 'bubbers') {
               user = {
                 name: 'J.P. Miller',
                 email: 'milz@yahoo.com',
@@ -41,13 +45,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           if (!user) {
             throw new Error('User not found.');
           }
+          console.log(user);
+          return user;
         } catch (error) {
-          if (!error) return null;
-          console.log('bummer!', error);
+          if (error instanceof ZodError) {
+            return null;
+          }
         }
-
-        console.log(user);
-        return user;
       },
     }),
   ],

@@ -1,4 +1,4 @@
-import LoginForm from './LoginForm';
+import LoginForm from './FormLogin';
 import GoogleLogin from './GoogleLogin';
 
 interface LoginProps {
