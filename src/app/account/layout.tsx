@@ -23,7 +23,7 @@ export default async function AccountLayout({
             width={48}
             alt="Legacy of Maela"
           />
-          <span className="mb-2 flex">The Road to Teloceja</span>
+          <span className="mb-1 flex">The Road to Teloceja</span>
         </Link>
       </header>
 

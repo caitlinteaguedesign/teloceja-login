@@ -10,11 +10,12 @@ export default function FormLogin() {
         await signIn('credentials', formData);
       }}
     >
-      <div className="rounded-md border border-danger-400 bg-danger-100 p-5 pt-3">
+      <div className="grid-cols-info-card grid items-center gap-x-2 gap-y-1 rounded-md border border-danger-400 bg-danger-100 p-3 pb-4">
+        <Image src="/warning-icon.svg" alt="warning" width={20} height={20} />
         <h3 className="text-lg font-semibold text-parchment-700">
           Incorrect email or password
         </h3>
-        <p>
+        <p className="col-start-2">
           The email or password you entered does not match our records. Please
           try again, and contact{' '}
           <a

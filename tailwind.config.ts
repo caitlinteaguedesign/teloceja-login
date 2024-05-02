@@ -12,6 +12,9 @@ const config: Config = {
         '32rem': '32rem',
         '48rem': '48rem',
       },
+      gridTemplateColumns: {
+        'info-card': 'auto 1fr',
+      },
       fontFamily: {
         default: ['var(--font-barlow)', 'sans-serif'],
         heading: ['var(--font-gg)', 'serif'],
