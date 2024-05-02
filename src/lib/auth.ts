@@ -13,8 +13,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: {},
       },
       authorize: async (credentials) => {
+        let user = null;
         try {
-          let user = null;
           const { email, password } =
             await signInSchema.parseAsync(credentials);
 
@@ -52,6 +52,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             return null;
           }
         }
+        return user;
       },
     }),
   ],

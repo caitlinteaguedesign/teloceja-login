@@ -1,6 +1,7 @@
 import { signIn } from '@/lib/auth';
+import Image from 'next/image';
 
-export default function LoginForm() {
+export default function FormLogin() {
   return (
     <form
       className="grid gap-4"
@@ -34,7 +35,12 @@ export default function LoginForm() {
           required
           placeholder="Enter your email"
         />
-        <div className="text-danger-400">Error message</div>
+        <div className="flex items-center gap-1 ">
+          <Image src="/warning-icon.svg" alt="warning" width={18} height={18} />
+          <span className="mb-0.5 font-semibold text-danger-400">
+            Error message
+          </span>
+        </div>
       </div>
       <div className="grid gap-1">
         <label className="block">Password</label>
@@ -45,7 +51,12 @@ export default function LoginForm() {
           required
           placeholder="Enter your password"
         />
-        <div className="text-danger-400">Error message</div>
+        <div className="flex items-center gap-1 ">
+          <Image src="/warning-icon.svg" alt="warning" width={18} height={18} />
+          <span className="mb-0.5 font-semibold text-danger-400">
+            Error message
+          </span>
+        </div>
       </div>
       <button className="h-12 w-full rounded-md bg-parchment-800 p-3 pt-2 font-semibold text-white">
         Login

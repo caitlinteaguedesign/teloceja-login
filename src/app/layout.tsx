@@ -30,10 +30,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${grenzeGotisch.variable} ${barlow.variable} text-parchment-900 flex justify-center bg-parchment-500 font-default`}
+        className={`${grenzeGotisch.variable} ${barlow.variable} flex justify-center bg-parchment-500 bg-[url('/art/halls-of-teloceja.jpg')] bg-right bg-no-repeat font-default text-parchment-900 xl:bg-left`}
       >
-        <div role="presentation" className="w-full max-w-7xl">
-          {children}
+        <div className="flex w-full max-w-7xl flex-initial flex-row justify-end">
+          <div
+            className={`flex min-h-screen w-full max-w-lg flex-col items-center bg-white p-8`}
+          >
+            {children}
+          </div>
         </div>
       </body>
     </html>

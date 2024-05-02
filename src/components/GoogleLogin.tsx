@@ -1,4 +1,5 @@
 import { signIn } from '@/lib/auth';
+import Image from 'next/image';
 
 export default function GoogleLogin() {
   return (
@@ -10,9 +11,12 @@ export default function GoogleLogin() {
     >
       <button
         type="submit"
-        className="h-12 w-full rounded-md border border-parchment-500 p-4 pt-3 font-semibold leading-4 text-parchment-800"
+        className="flex h-12 w-full items-center justify-center gap-3 rounded-md border border-parchment-500 p-4"
       >
-        Sign in with Google
+        <Image src="/google-icon.svg" height={24} width={24} alt="Google" />
+        <span className="mb-0.5 font-semibold text-parchment-800">
+          Sign in with Google
+        </span>
       </button>
     </form>
   );
