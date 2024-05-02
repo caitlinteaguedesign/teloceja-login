@@ -30,9 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${grenzeGotisch.variable} ${barlow.variable} bg-parchment-500 font-default`}
+        className={`${grenzeGotisch.variable} ${barlow.variable} text-parchment-900 flex justify-center bg-parchment-500 font-default`}
       >
-        {children}
+        <div role="presentation" className="w-full max-w-7xl">
+          {children}
+        </div>
       </body>
     </html>
   );

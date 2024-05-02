@@ -18,13 +18,14 @@ const config: Config = {
       },
       colors: {
         accent: '#4285F4',
-        error: {
+        danger: {
           100: '#FEE8D8',
           400: '#EA4335',
         },
         parchment: {
           100: '#FFF5E7',
           500: '#D29D78',
+          600: '#8F6D61',
           700: '#431512',
           800: '#270E05',
           900: '#120602',

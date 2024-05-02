@@ -11,21 +11,15 @@ export default function Account() {
             Log out
           </Link>
           <div>
-            <span className="text-parchment-900 font-semibold uppercase">
-              Name
-            </span>{' '}
+            <span className="font-semibold uppercase">Name</span>{' '}
             <span className="text-parchment-700">NA</span>
           </div>
           <div>
-            <span className="text-parchment-900 font-semibold uppercase">
-              Email
-            </span>{' '}
+            <span className="font-semibold uppercase">Email</span>{' '}
             <span className="text-parchment-700">NA</span>
           </div>
           <div>
-            <span className="text-parchment-900 font-semibold uppercase">
-              Password
-            </span>{' '}
+            <span className="font-semibold uppercase">Password</span>{' '}
             <span className="text-parchment-700">NA</span>
           </div>
         </main>
