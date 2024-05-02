@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { signIn } from '@/lib/auth';
 
 export default function LoginForm() {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-
   return (
-    <form className="grid gap-4">
+    <form
+      className="grid gap-4"
+      action={async (formData) => {
+        'use server';
+        await signIn('credentials', formData);
+      }}
+    >
       <div className="rounded-md border border-danger-400 bg-danger-100 p-5 pt-3">
         <h3 className="text-lg font-semibold text-parchment-700">
           Incorrect email or password
@@ -27,8 +30,7 @@ export default function LoginForm() {
         <input
           className="h-12 rounded-md border border-parchment-500 p-4 pt-3 text-parchment-800 placeholder:text-parchment-600"
           type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          name="email"
           required
           placeholder="Enter your email"
         />
@@ -39,17 +41,13 @@ export default function LoginForm() {
         <input
           className="h-12 rounded-md border border-parchment-500 p-4 pt-3 text-parchment-800 placeholder:text-parchment-600"
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          name="password"
           required
           placeholder="Enter your password"
         />
         <div className="text-danger-400">Error message</div>
       </div>
-      <button
-        type="submit"
-        className="h-12 w-full rounded-md bg-parchment-800 p-3 pt-2 font-semibold text-white"
-      >
+      <button className="h-12 w-full rounded-md bg-parchment-800 p-3 pt-2 font-semibold text-white">
         Login
       </button>
     </form>
