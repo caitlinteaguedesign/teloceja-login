@@ -1,23 +1,17 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function LoginForm() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const router = useRouter();
-  const handleLogin = () => {
-    router.push('/account');
-  };
-
   return (
     <div>
       <h2 className="mb-4 text-xl font-semibold">Login to your account</h2>
       <form className="grid gap-4">
-        <div className="bg-danger-100 border-danger-400 rounded-md border p-5 pt-3">
-          <h3 className="text-parchment-700 text-lg font-semibold">
+        <div className="rounded-md border border-danger-400 bg-danger-100 p-5 pt-3">
+          <h3 className="text-lg font-semibold text-parchment-700">
             Incorrect email or password
           </h3>
           <p>
@@ -25,7 +19,7 @@ export default function LoginForm() {
             try again, and contact{' '}
             <a
               href="mailto:support@maela.com"
-              className="text-accent font-semibold"
+              className="font-semibold text-accent"
             >
               support@maela.com
             </a>{' '}
@@ -35,7 +29,7 @@ export default function LoginForm() {
         <div className="grid gap-1">
           <label className="block">Email</label>
           <input
-            className="text-parchment-800 placeholder:text-parchment-600 h-12 rounded-md border border-parchment-500 p-4 pt-3"
+            className="h-12 rounded-md border border-parchment-500 p-4 pt-3 text-parchment-800 placeholder:text-parchment-600"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -47,7 +41,7 @@ export default function LoginForm() {
         <div className="grid gap-1">
           <label className="block">Password</label>
           <input
-            className="text-parchment-800 placeholder:text-parchment-600 h-12 rounded-md border border-parchment-500 p-4 pt-3"
+            className="h-12 rounded-md border border-parchment-500 p-4 pt-3 text-parchment-800 placeholder:text-parchment-600"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -58,7 +52,7 @@ export default function LoginForm() {
         </div>
         <button
           type="submit"
-          className="bg-parchment-800 h-12 w-full rounded-md p-3 pt-2 font-semibold text-white"
+          className="h-12 w-full rounded-md bg-parchment-800 p-3 pt-2 font-semibold text-white"
         >
           Login
         </button>
