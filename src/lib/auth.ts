@@ -1,5 +1,4 @@
 import NextAuth from 'next-auth';
-import { ZodError } from 'zod';
 import Credentials from 'next-auth/providers/credentials';
 import { signInSchema } from './zod';
 import Google from 'next-auth/providers/google';
