@@ -26,13 +26,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         if (!user) {
           throw new Error('User not found.');
         }
-        console.log('pw:', user.password);
         // check password
         if (user.password !== password) {
           throw new Error('Password does not match.');
         }
         // just pass some of the data to the app
         user = { name: user.name, email: user.email };
+
         return user;
       },
     }),
