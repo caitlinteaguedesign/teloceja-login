@@ -14,7 +14,7 @@ This project was bootstrapped with [`create-next-app`](https://github.com/vercel
 
 ## Getting Started
 
-Run `npm install`.
+After cloning the repo, run `npm install` in a terminal.
 
 Next, copy `.env.local.sample` and rename to `.env.local`.
 
@@ -65,7 +65,7 @@ If I were to continue this project, I would refer to the [Auth.js adapter for Mo
 
 #### Custom login form with credentials
 
-This task took up the majority of the development time as it involved a tool that was new to me to perform authentication, which itself is also a task that I have only done once before in a slightly different tech stack (you view [my past project](https://sudoku.caitlinteague.com/login) to view field validation).
+This task took up the majority of the development time as it involved a tool that was new to me to perform authentication, which itself is also a task that I have only done once before in a slightly different tech stack. You can view [my past project](https://sudoku.caitlinteague.com/login) to see how I previously handled field validation ([GitHub repo](https://github.com/caitlinteaguedesign/sudoku-app)).
 
 I read Auth.js and Next.js authentication docs but found implementing a custom sign in form to be difficult. After some trial and error (much google-ing and stackoverflow-ing) to no avail, I switched gears and tried implementing the [Google provider](https://authjs.dev/getting-started/authentication/oauth). Contrary to my initial assumption, this task proved much more straightforward, and the win helped boost my confidence.
 
