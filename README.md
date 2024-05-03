@@ -1,4 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Introduction
+
+This app was created to test my skills in full stack development.
+
+Tech stack includes:
+
+- Next.js
+- Auth.js v5
+- Tailwind CSS
+- TypeScript
+- Playwright
+
+This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -8,16 +20,16 @@ Next, copy `.env.local.sample` and rename to `.env.local`.
 
 Set **AUTH_SECRET** to a random string. I used `npx auth secret` to generate one.
 
-Some browsers may deny the Google login without these values set:
+You can use your own Google OAuth 2.0 Client ID, or contact [me](mailto:design@caitlinteague.com) and I can send you the **AUTH_GOOGLE_ID** and **AUTH_GOOGLE_SECRET** for the credentials I created.
+
+> When the user signs in with Google this app will only store their Google account name, email, and profile image url temporarily in a session in the browser. No information is transferred to another database.
+
+**NEXAUTH_URL** and **AUTH_TRUST_HOST** are required when running the app in production (can skip if only running in dev mode).
 
 ```
 NEXTAUTH_URL=http://localhost:3000
 AUTH_TRUST_HOST=http://localhost:3000
 ```
-
-You can use your own Google OAuth 2.0 Client ID, or contact [me](mailto:design@caitlinteague.com) and I can send you the **AUTH_GOOGLE_ID** and **AUTH_GOOGLE_SECRET** for the credentials I created.
-
-> If using Sign on with Google, know that this app will only store your Google account name, email, and profile image url temporarily in a session in the browser. No information is transferred to another database.
 
 Next, run the development server:
 
@@ -32,6 +44,8 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+To sign in successfully with credentials, refer to the object in `/src/lib/data.ts`. You can choose from the existing users listed there, and add to or edit the list.
 
 ## Create Next App Notes
 
