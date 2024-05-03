@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { auth } from '@/lib/auth';
 import Login from '@/components/Login';
+import Logout from '@/components/Logout';
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+
   return (
     <>
       <Image
@@ -16,7 +20,24 @@ export default function Home() {
         About
       </Link>
       <main className="flex w-full justify-center">
-        <Login title="Login to your account" />
+        {session ? (
+          <div className="flex flex-col items-center gap-2">
+            <h2 className="text-2xl font-extrabold">
+              You are already logged in!
+            </h2>
+            <div className="flex justify-center gap-6 ">
+              <Link
+                href="/account"
+                className="mb-16 font-semibold text-accent "
+              >
+                Go to My Account
+              </Link>
+              <Logout />
+            </div>
+          </div>
+        ) : (
+          <Login title="Login to your account" />
+        )}
       </main>
     </>
   );
