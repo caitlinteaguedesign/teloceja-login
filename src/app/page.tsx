@@ -10,6 +10,7 @@ export default async function Home() {
   return (
     <>
       <Image
+        priority
         src="/logo-color.svg"
         height={80}
         width={80}

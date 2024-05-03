@@ -18,6 +18,7 @@ export default async function AccountLayout({
           className=" flex items-center gap-3 font-heading text-3xl leading-7"
         >
           <Image
+            priority
             src="/logo-color.svg"
             height={48}
             width={48}
