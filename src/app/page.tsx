@@ -23,9 +23,7 @@ export default async function Home() {
       <main className="flex w-full justify-center">
         {session ? (
           <div className="flex flex-col items-center gap-2">
-            <h2 className="text-2xl font-extrabold">
-              You are already logged in!
-            </h2>
+            <h2 className="text-2xl font-extrabold">You are logged in!</h2>
             <div className="flex justify-center gap-6 ">
               <Link
                 href="/account"
