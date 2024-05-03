@@ -8,7 +8,7 @@ test('has title', async ({ page }) => {
 });
 
 test('should navigate to the about page', async ({ page }) => {
-  // Start from the index page (the baseURL is set via the webServer in the playwright.config.ts)
+  // Start from the index page
   await page.goto('/');
   // Find an element with the text 'About' and click on it
   await page.click('text=About');
