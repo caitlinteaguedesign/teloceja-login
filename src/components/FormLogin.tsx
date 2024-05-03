@@ -4,12 +4,12 @@ export default function FormLogin() {
   return (
     <form
       className="grid gap-4"
-      action={async (formData) => {
+      action={async () => {
         'use server';
-        await signIn('credentials', formData);
+        await signIn();
       }}
     >
-      <div className="grid gap-1">
+      {/* <div className="grid gap-1">
         <label className="block">Email</label>
         <input
           className="h-12 rounded-md border border-parchment-500 p-4 pt-3 text-parchment-800 placeholder:text-parchment-600"
@@ -28,9 +28,12 @@ export default function FormLogin() {
           required
           placeholder="Enter your password"
         />
-      </div>
-      <button className="mt-1 h-12 w-full rounded-md bg-parchment-800 p-3 pt-2 font-semibold text-white">
-        Login
+      </div> */}
+      <button
+        type="submit"
+        className="mt-1 h-12 w-full rounded-md bg-parchment-800 p-3 pt-2 font-semibold text-white"
+      >
+        Sign in with Credentials
       </button>
     </form>
   );
