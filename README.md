@@ -47,6 +47,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 To sign in successfully with credentials, refer to the object in `/src/lib/data.ts`. You can choose from the existing users listed there, and add to or edit the list.
 
+## Tests
+
+Tests were written with [Playwright](https://playwright.dev/). You can find tests in `tests/`.
+
+```bash
+# run all tests
+npx playwright test
+
+# run specific tests
+npx playwright test [filename]
+
+```
+
 ## Background
 
 Building on my past experience in React, Tailwind CSS, Next.js, and TypeScript, this project was an exciting opportunity for me to combine these technologies for the first time. Additionally, I got to try out Auth.js for user authentication, a departure from the manual setup I created in my [Sudoku App](https://github.com/caitlinteaguedesign/sudoku-app) with Express and React. Lastly, I had a reason to create end-to-end (E2E) tests for the first time by leveraging Playwright.
@@ -72,6 +85,10 @@ I read Auth.js and Next.js authentication docs but found implementing a custom s
 After further attempts with the custom form, I did achieve successful authentication when the credentials were correct. However, if the credentials did not return a user the app produced an unhandled runtime error. The CallbackRouteError indicates my code is missing the necessary information to properly handle error routing. I later learned from developers over on GitHub that the documentation in [Auth.js for v5 Credentials](https://authjs.dev/getting-started/authentication/credentials) is partially out of date, as the `throw new Error()` is no longer supported/recommended practice, which further thwarted my attempts at debugging.
 
 In the absence of time, I conceded defeat (for now) and removed my custom sign in form to direct users to the Auth.js provided form instead. The design and error handling no longer matches my original vision, but the service is now stable and showing authentication errors, which is far more important.
+
+### E2E Tests
+
+I wrote a few basic tests building off the examples provided, mainly navigating to the other pages and confirming the result. I did not have time to dig deeper into authentication tests, but did find documentation on strategies with [Playwright](https://playwright.dev/docs/auth) and [Auth.js](https://authjs.dev/guides/testing) to explore later.
 
 ### Opportunities
 
