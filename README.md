@@ -1,6 +1,6 @@
 ## Introduction
 
-I created this app to demonstrate my skills in full stack web development. It is inspired by another project I am working on with a friend, J.P Miller, author of [The Legacy of Maela](https://www.drivethrurpg.com/en/publisher/2434/legacy-of-maela) table-top rpg campaign setting. Later this year, after I complete the rebrand and book cover redesigns, I plan on creating a choose-your-own-adventure style text-based web game based on one of his modules. Art and IP in this sample project used with the author's permission.
+I created this app to demonstrate my skills in full stack web development. It is inspired by another project I am working on with a friend, J.P Miller, author of [The Legacy of Maela](https://www.drivethrurpg.com/en/publisher/2434/legacy-of-maela) table-top rpg campaign setting. Later this year, after I complete a rebranding project, I plan on creating a choose-your-own-adventure style text-based web game based on one of his modules. Art and IP in this sample project used with the author's permission.
 
 Tech stack includes:
 
@@ -16,7 +16,7 @@ This project was bootstrapped with [`create-next-app`](https://github.com/vercel
 
 After cloning the repo, run `npm install` in a terminal.
 
-Next, copy `.env.local.sample` and rename to `.env.local`.
+Next, copy `.env.local.sample` and rename it to `.env.local`.
 
 Set **AUTH_SECRET** to a random string. I used `npx auth secret` to generate one.
 
@@ -90,9 +90,16 @@ In the absence of time, I conceded defeat (for now) and removed my custom sign i
 
 I wrote a few basic tests building off the examples provided, mainly navigating to the other pages and confirming the result. I did not have time to dig deeper into authentication tests, but did find documentation on strategies with [Playwright](https://playwright.dev/docs/auth) and [Auth.js](https://authjs.dev/guides/testing) to explore later.
 
-### Opportunities
+Future Tests
 
-In hindsight, I think my past Next.js experience had not yet covered form handling and authentication, so to improve my Next.js skills there's a couple of tutorials I found that could help my understanding of Next.js in general as well as a deeper understanding of Auth.js.
+- Basic auth (login, logout)
+- Google login
+- Credentials login
+- if logging on /, should redirect to the /account
+
+## Opportunities
+
+In retrospect, I think my past Next.js experience had not yet covered form handling and authentication, so to improve my Next.js skills there's a couple of tutorials I found that will help my understanding of Next.js in general as well as a deeper understanding of Auth.js.
 
 - [Learn Next.js](https://nextjs.org/learn/dashboard-app/adding-authentication)
 - [Auth.js V5 From Scratch](https://www.youtube.com/watch?v=Rs8018RO5YQ)
