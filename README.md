@@ -45,6 +45,8 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+For the best experience, view the app in **Firefox** or **Chrome**. Normally for a web app I would test a site in a variety of browsers and devices and use a tool like [BrowserStack](https://www.browserstack.com/) to emulate devices I didn't have access to ensure compatibility and responsiveness. Alas, I only had access to the browsers listed above on a Windows 10 computer.
+
 To sign in successfully with credentials, refer to the object in `/src/lib/data.ts`. You can choose from the existing users listed there, and add to or edit the list.
 
 ## Tests
