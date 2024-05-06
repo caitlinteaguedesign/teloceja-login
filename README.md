@@ -20,7 +20,7 @@ Next, copy `.env.local.sample` and rename it to `.env.local`.
 
 Set **AUTH_SECRET** to a random string. I used `npx auth secret` to generate one.
 
-You can use your own Google OAuth 2.0 Client ID, or contact [me](mailto:design@caitlinteague.com) and I can send you the **AUTH_GOOGLE_ID** and **AUTH_GOOGLE_SECRET** for the credentials I created.
+You can use your own Google OAuth 2.0 Client ID, or [contact me](mailto:design@caitlinteague.com) and I can send you the **AUTH_GOOGLE_ID** and **AUTH_GOOGLE_SECRET** for the credentials I created.
 
 > When the user signs in with Google this app will only store their Google account name, email, and profile image url temporarily in a session in the browser. No information is transferred to another database.
 
@@ -86,7 +86,7 @@ I read Auth.js and Next.js authentication docs but found implementing a custom s
 
 After further attempts with the custom form, I did achieve successful authentication when the credentials were correct. However, if the credentials did not return a user the app produced an unhandled runtime error. The CallbackRouteError indicates my code is missing the necessary information to properly handle error routing. I later learned from developers over on GitHub that the documentation in [Auth.js for v5 Credentials](https://authjs.dev/getting-started/authentication/credentials) is partially out of date, as the `throw new Error()` is no longer supported/recommended practice, which further thwarted my attempts at debugging.
 
-In the absence of time, I conceded defeat (for now) and removed my custom sign in form to direct users to the Auth.js provided form instead. The design and error handling no longer matches my original vision, but the service is now stable and showing authentication errors, which is far more important.
+In the interest of time, I conceded defeat (for now) and removed my custom sign in form to direct users to the Auth.js provided form instead. The design and error handling no longer matches my original vision, but the service is now stable and showing authentication errors, which is far more important.
 
 ### E2E Tests
 
@@ -97,7 +97,7 @@ Future Tests
 - Basic auth (login, logout)
 - Google login
 - Credentials login
-- if logging on /, should redirect to the /account
+- If logging on the home page, should redirect to the account page
 
 ## Opportunities
 
